@@ -1,5 +1,5 @@
-A Vue.js website to display Top Rated Movies and Upcoming Movies consuming The Movie Database APIs.
-(https://saketsuraj.github.io/movie-app-vuejs/)
+A Vue.js website with pagination to display Top Rated Movies and Upcoming Movies consuming The Movie Database APIs.
+Click the link to check the website: https://saketsuraj.github.io/movie-app-vuejs/
 
  
 API Guide: https://developers.themoviedb.org/3
