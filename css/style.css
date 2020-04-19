@@ -1,0 +1,57 @@
+.top-movie-con h2:first-child{
+    text-align: center;
+    margin-top:10px;
+}
+.detail-holder{
+    box-shadow: -1px 3px 11px 5px #aaa;
+    border-radius: 5px;
+}
+.detail-holder img{
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.movie-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.movie-container .col-md-4{
+    margin-top: 30px;
+}
+.detail{
+    padding: 10px;
+}
+.detail span.d-left{
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 2px 3px #848181;
+}
+.detail span.d-right{
+    float:right;
+    font-size: 15px;
+}
+.detail p.d-overview{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-top: 15px;
+    margin-bottom:10px;
+    font-size: 12px;
+}
+.detail p.d-date{
+    font-size: 12px;
+    font-weight: bold;
+}
+.detail p.d-date span{
+    font-weight: 300;
+}
+.button-holder{
+    margin-top:30px;
+}
+
+.button-holder button{
+    float:right;
+    margin-right:10px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movies list</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!--Movie container parent box-->
+    <div class="top-movie-con" id="movieListContainer">
+        <ul class="nav nav-tabs nav-justified">
+            <li class="nav-item">
+                <a class="nav-link" @click.prevent="setActive('topRated')" :class="{ active: isActive('topRated') }"
+                    href="#topRated">Top Rated Movies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" @click.prevent="setActive('upcoming')" :class="{ active: isActive('upcoming') }"
+                    href="#upcoming">Upcoming Movies</a>
+            </li>
+        </ul>
+
+        <div class="tab-content py-3" id="myTabContent">
+            <!-- Top rated movies list -->
+            <div class="tab-pane" :class="{ 'active': isActive('topRated') }" id="topRated">
+                <h2>{{toptitle}}</h2>
+                <div class="col-md-12 movie-container">
+                    <movie-list v-for="movie in results" v-bind:movie="movie"></movie-list>
+                </div>
+                <div class="button-holder"> <button type="button" @click="fetchNext()" class="btn btn-primary">Next
+                        &gt;</button>
+                    <button type="button" :disabled="previous_disable" @click="fetchPrevious()"
+                        class="btn btn-primary">&lt; Previous</button></div>
+            </div>
+            <!-- Upcoming movies list -->
+            <div class="tab-pane" :class="{ 'active': isActive('upcoming') }" id="upcoming">
+                <h2>{{upcomingTitle}}</h2>
+                <div class="col-md-12 movie-container">
+                    <movie-list v-for="movie in results" v-bind:movie="movie"></movie-list>
+                </div>
+                <div class="button-holder"> <button type="button" @click="fetchNext()" class="btn btn-primary">Next
+                        &gt;</button>
+                    <button type="button" :disabled="previous_disable" @click="fetchPrevious()"
+                        class="btn btn-primary">&lt; Previous</button></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
